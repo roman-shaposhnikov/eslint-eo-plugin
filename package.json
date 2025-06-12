@@ -1,0 +1,49 @@
+{
+  "name": "eslint-eo-plugin",
+  "version": "0.0.0",
+  "license": "ISC",
+  "type": "module",
+  "author": "Roman Shaposhnikov <roman_shaposhnikov_pub@mail.ru>",
+  "description": "ESLint plugin for stick to the theory of Elegant Objects",
+  "scripts": {
+    "test": "npm run test:types && npm run test:rules",
+    "test:types": "tsc --noEmit",
+    "test:rules": "npx jiti ./runRulesTests.ts",
+    "build": "npm run build:clear && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:copy",
+    "build:clear": "rm -rf dist",
+    "build:cjs": "tsc -p tsconfig.cjs.json && bash createPackage.sh commonjs _cjs && npx tsc-alias -v --dir dist/_cjs -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json && bash createPackage.sh module _esm && npx tsc-alias -v --dir dist/_esm -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json && npx tsc-alias -v --dir dist/_types -p tsconfig.types.json",
+    "build:copy": "cp package.json dist/package.json && cp README.md dist/README.md"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "homepage": "https://github.com/roman-shaposhnikov/eslint-eo-plugin#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roman-shaposhnikov/eslint-eo-plugin"
+  },
+  "exports": {
+    ".": {
+      "types": "./_types/index.d.ts",
+      "require": "./_cjs/index.js",
+      "import": "./_esm/index.js",
+      "default": "./_esm/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "@typescript-eslint/utils": "^8.34.0",
+    "eslint": "^9.28.0",
+    "tsc-alias": "^1.8.10"
+  }
+}

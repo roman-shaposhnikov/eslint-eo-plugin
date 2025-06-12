@@ -1,0 +1,1 @@
+echo {\"type\": \"$1\"} > ./dist/$2/package.json
