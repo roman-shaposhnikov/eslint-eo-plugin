@@ -10,12 +10,7 @@
     "test": "npm run test:types && npm run test:rules",
     "test:types": "tsc --noEmit",
     "test:rules": "npx jiti ./config/tests/run.ts",
-    "build": "npm run build:clear && npm run build:cjs && npm run build:esm && npm run build:types && npm run build:copy",
-    "build:clear": "rm -rf dist",
-    "build:cjs": "tsc -p tsconfig.cjs.json && bash createPackage.sh commonjs _cjs && npx tsc-alias -v --dir dist/_cjs -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json && bash createPackage.sh module _esm && npx tsc-alias -v --dir dist/_esm -p tsconfig.esm.json",
-    "build:types": "tsc -p tsconfig.types.json && npx tsc-alias -v --dir dist/_types -p tsconfig.types.json",
-    "build:copy": "cp package.json dist/package.json && cp README.md dist/README.md"
+    "build": "./config/build/build.sh"
   },
   "keywords": [
     "eslint",
