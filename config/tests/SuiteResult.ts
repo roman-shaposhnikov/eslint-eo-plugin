@@ -14,6 +14,7 @@ export class SuiteResult {
   }
 
   toString(): string {
-    return `${this.error.toString()}\n`
+    const errorMsg = this.error.toString()
+    return errorMsg && `${errorMsg}\n`
   }
 }

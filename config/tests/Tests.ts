@@ -23,9 +23,9 @@ export class Tests {
 
   async toString(): Promise<string> {
     const results = await this.run()
-    const stringifiedResults = results.map((result) =>
-      result.toString()
-    )
+    const stringifiedResults = results
+      .map((result) => result.toString())
+      .filter(Boolean)
     return stringifiedResults.join("\n")
   }
 }
