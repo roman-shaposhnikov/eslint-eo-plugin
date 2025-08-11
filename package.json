@@ -7,9 +7,10 @@
   "description": "ESLint plugin for stick to the theory of Elegant Objects",
   "scripts": {
     "init": "./config/init.sh",
-    "test": "npm run test:types && npm run test:rules",
+    "test": "npm run test:types && npm run test:run",
     "test:types": "tsc --noEmit",
-    "test:rules": "npx jiti ./config/tests/run.ts",
+    "test:run": "vitest run",
+    "test:watch": "vitest watch",
     "build": "./config/build/build.sh"
   },
   "keywords": [
@@ -40,6 +41,7 @@
     "@types/node": "^24.0.1",
     "@typescript-eslint/utils": "^8.34.0",
     "eslint": "^9.28.0",
-    "tsc-alias": "^1.8.10"
+    "tsc-alias": "^1.8.10",
+    "vitest": "^3.2.4"
   }
 }
