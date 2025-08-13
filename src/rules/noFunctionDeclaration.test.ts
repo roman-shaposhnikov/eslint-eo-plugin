@@ -1,15 +1,16 @@
-import { ruleTester } from "./test"
+import { test } from "./test"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
 
-const { name, rule } = noFunctionDeclaration
-ruleTester.run(name, rule, {
+test(noFunctionDeclaration, {
   valid: [],
   invalid: [
     {
       code: `
         function test() {}
       `,
-      errors: [{ message: rule.meta.messages.noFunctionDeclaration }],
+      errors: [
+        { message: noFunctionDeclaration.rule.meta.messages.noFunctionDeclaration },
+      ],
     },
   ],
 })

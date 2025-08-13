@@ -19,4 +19,16 @@ class VitestRuleTester extends RuleTester {
   }
 }
 
-export const ruleTester = new VitestRuleTester()
+const ruleTester = new VitestRuleTester()
+
+type TestCases = {
+  valid: Array<string | RuleTester.ValidTestCase>
+  invalid: RuleTester.InvalidTestCase[]
+}
+
+export const test = (
+  { name, rule }: NamedRule,
+  testCases: TestCases
+) => {
+  ruleTester.run(name, rule, testCases)
+}

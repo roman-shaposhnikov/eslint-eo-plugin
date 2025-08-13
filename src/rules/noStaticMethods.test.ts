@@ -1,8 +1,7 @@
-import { ruleTester } from "./test"
+import { test } from "./test"
 import { noStaticMethods } from "./noStaticMethods"
 
-const { name, rule } = noStaticMethods
-ruleTester.run(name, rule, {
+test(noStaticMethods, {
   valid: [],
   invalid: [
     {
@@ -10,14 +9,14 @@ ruleTester.run(name, rule, {
         class Test {
           static method() {}
       }`,
-      errors: [{ message: rule.meta.messages.noStaticMethods }],
+      errors: [{ message: noStaticMethods.rule.meta.messages.noStaticMethods }],
     },
     {
       code: `
         class Test {
           static async method() {}
       }`,
-      errors: [{ message: rule.meta.messages.noStaticMethods }],
+      errors: [{ message: noStaticMethods.rule.meta.messages.noStaticMethods }],
     },
   ],
 })
