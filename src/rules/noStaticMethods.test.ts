@@ -1,6 +1,7 @@
 import { test } from "./test"
 import { noStaticMethods } from "./noStaticMethods"
 
+const message = noStaticMethods.rule.meta.messages.noStaticMethods
 test(noStaticMethods, {
   valid: [],
   invalid: [
@@ -9,14 +10,14 @@ test(noStaticMethods, {
         class Test {
           static method() {}
       }`,
-      errors: [{ message: noStaticMethods.rule.meta.messages.noStaticMethods }],
+      errors: [{ message }],
     },
     {
       code: `
         class Test {
           static async method() {}
       }`,
-      errors: [{ message: noStaticMethods.rule.meta.messages.noStaticMethods }],
+      errors: [{ message }],
     },
   ],
 })

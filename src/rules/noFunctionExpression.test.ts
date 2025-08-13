@@ -1,6 +1,7 @@
 import { test } from "./test"
 import { noFunctionExpression } from "./noFunctionExpression"
 
+const message = noFunctionExpression.rule.meta.messages.noFunctionExpression
 test(noFunctionExpression, {
   valid: [],
   invalid: [
@@ -8,33 +9,25 @@ test(noFunctionExpression, {
       code: `
         const test = function nfe() {}
       `,
-      errors: [
-        { message: noFunctionExpression.rule.meta.messages.noFunctionExpression },
-      ],
+      errors: [{ message }],
     },
     {
       code: `
         const test = function () {}
       `,
-      errors: [
-        { message: noFunctionExpression.rule.meta.messages.noFunctionExpression },
-      ],
+      errors: [{ message }],
     },
     {
       code: `
         (function nfe() {})()
       `,
-      errors: [
-        { message: noFunctionExpression.rule.meta.messages.noFunctionExpression },
-      ],
+      errors: [{ message }],
     },
     {
       code: `
         (function () {})()
       `,
-      errors: [
-        { message: noFunctionExpression.rule.meta.messages.noFunctionExpression },
-      ],
+      errors: [{ message }],
     },
   ],
 })
