@@ -9,8 +9,8 @@
     "init": "./config/init.sh",
     "test": "npm run test:types && npm run test:run",
     "test:types": "tsc --noEmit",
-    "test:run": "vitest run",
-    "test:watch": "vitest watch",
+    "test:run": "vitest run --config ./config/test/vitest.config.ts",
+    "test:watch": "vitest watch --config ./config/test/vitest.config.ts",
     "build": "./config/build/build.sh"
   },
   "keywords": [
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.1",
+    "@typescript-eslint/rule-tester": "^8.39.1",
     "@typescript-eslint/utils": "^8.34.0",
     "eslint": "^9.28.0",
     "tsc-alias": "^1.8.10",
