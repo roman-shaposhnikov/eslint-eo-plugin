@@ -42,6 +42,15 @@ if (import.meta.vitest) {
       {
         code: `
           class Test {
+            static method(a: number): string {
+              return "test"
+            }
+        }`,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          class Test {
             static async method() {}
         }`,
         errors: [{ messageId }],
