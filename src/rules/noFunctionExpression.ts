@@ -32,6 +32,14 @@ if (import.meta.vitest) {
     invalid: [
       {
         code: `
+          const test = function nfe(a: number): number {
+            return 42
+          }
+        `,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
           const test = function nfe() {}
         `,
         errors: [{ messageId }],
