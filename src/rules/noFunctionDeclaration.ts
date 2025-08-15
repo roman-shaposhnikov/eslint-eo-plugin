@@ -36,6 +36,20 @@ if (import.meta.vitest) {
         `,
         errors: [{ messageId }],
       },
+      {
+        code: `
+          function test(): void {}
+        `,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          function test(a: string): string {
+            return a
+          }
+        `,
+        errors: [{ messageId }],
+      },
     ],
   })
 }
