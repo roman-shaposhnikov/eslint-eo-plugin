@@ -30,10 +30,21 @@ export const noLet = createNamedRule(name, {
 
 if (import.meta.vitest) {
   test(noLet, {
-    valid: ["const invalidVariable = 12313"],
+    valid: [
+      "const validVariable = 12313",
+      `const validVariable: string = "test"`,
+    ],
     invalid: [
       {
         code: "let invalidVariable",
+        errors: [{ messageId }],
+      },
+      {
+        code: "let invalidVariable: boolean",
+        errors: [{ messageId }],
+      },
+      {
+        code: "let invalidVariable: boolean = false",
         errors: [{ messageId }],
       },
       {
