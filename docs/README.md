@@ -8,12 +8,11 @@ Plugin rules:
 - [x] noNull
 - [x] noStaticMethods
 - [x] noVar
+- [ ] onlyPrivateFields
 
+- [ ] onlyPublicMethods
 - [ ] noClassWithoutInterface
 - [ ] noMutableClasses
-- [ ] noPublicFields
-- [ ] noPrivateMethods
-- [ ] noProtectedMethods
 - [ ] noPropertyAccessors
 - [ ] noNewOutsideCtor
 - [ ] noTypeIntrospection
