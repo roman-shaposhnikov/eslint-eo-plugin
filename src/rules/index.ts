@@ -13,3 +13,7 @@ export const enabledRules = [
   noFunctionExpression,
   noFunctionDeclaration,
 ]
+
+type ConcreteNamedRule = (typeof enabledRules)[number]
+export type ConcreteRule = ConcreteNamedRule["rule"]
+export type ConcreteRuleName = ConcreteNamedRule["name"]

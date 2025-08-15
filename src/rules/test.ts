@@ -1,5 +1,5 @@
-import { describe, it } from "vitest"
-import { RuleTester } from "eslint"
+import { describe, it, afterAll } from "vitest"
+import { RuleTester, RunTests } from "@typescript-eslint/rule-tester"
 
 import type { SuiteFactory } from "vitest"
 
@@ -17,18 +17,19 @@ class VitestRuleTester extends RuleTester {
   static itOnly(message: Message, callback: SuiteFactory) {
     it.only(message, callback)
   }
+
+  static afterAll(cb: () => void) {
+    afterAll(cb)
+  }
 }
 
 const ruleTester = new VitestRuleTester()
 
-type TestCases = {
-  valid: Array<string | RuleTester.ValidTestCase>
-  invalid: RuleTester.InvalidTestCase[]
-}
+type TestCases<MessageIds extends string> = RunTests<MessageIds, []>
 
-export const test = (
-  { name, rule }: NamedRule,
-  testCases: TestCases
+export const test = <Name extends string, MessageIds extends string>(
+  { name, rule }: NamedRule<Name, MessageIds>,
+  testCases: TestCases<MessageIds>
 ) => {
   ruleTester.run(name, rule, testCases)
 }

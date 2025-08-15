@@ -1,29 +1,57 @@
-const rule = {
+import { test } from "./test"
+import { createNamedRule } from "./createRule"
+
+const name = "no-let"
+const messageId = "noLet"
+export const noLet = createNamedRule(name, {
   create: (context) => ({
-    VariableDeclarator(node) {
-      if (
-        node.parent.type === "VariableDeclaration" &&
-        node.parent.kind === "let"
-      ) {
+    VariableDeclaration(node) {
+      if (node.kind === "let") {
         context.report({
-          messageId: "noLet",
-          node: node.parent,
+          messageId,
+          node,
         })
       }
     },
   }),
+  name,
   meta: {
     docs: {
       description: "Restricts Let usage",
     },
     messages: {
-      noLet: "Let usage restricted, use const instead!",
+      [messageId]: "Let usage restricted, use const instead!",
     },
+    type: "problem",
     schema: [],
   },
-} satisfies CustomRule
+  defaultOptions: [],
+})
 
-export const noLet = {
-  name: "no-let",
-  rule,
+if (import.meta.vitest) {
+  test(noLet, {
+    valid: ["const invalidVariable = 12313"],
+    invalid: [
+      {
+        code: "let invalidVariable",
+        errors: [{ messageId }],
+      },
+      {
+        code: "let invalidVariable = 12313",
+        errors: [{ messageId }],
+      },
+      {
+        code: "let t1, t2, t3 = 3",
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          for (let i = 0; i < 10; i++) {
+            // some logic
+          }
+        `,
+        errors: [{ messageId }],
+      },
+    ],
+  })
 }

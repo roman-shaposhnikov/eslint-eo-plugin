@@ -1,12 +1,13 @@
 import { enabledRules } from "./rules"
+import type { ConcreteRule, ConcreteRuleName } from "./rules"
 
-type PluginRules = Record<string, CustomRule>
+type PluginRules = Record<ConcreteRuleName, ConcreteRule>
 export const pluginRules = enabledRules.reduce<PluginRules>(
   (acc, rule) => {
     acc[rule.name] = rule.rule
     return acc
   },
-  {}
+  {} as PluginRules
 )
 
 export const createConfigRules = (pluginName: string) =>

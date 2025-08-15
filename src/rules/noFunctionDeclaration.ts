@@ -1,24 +1,41 @@
-const rule = {
+import { test } from "./test"
+import { createNamedRule } from "./createRule"
+
+const name = "no-function-declaration"
+const messageId = "noFunctionDeclaration"
+export const noFunctionDeclaration = createNamedRule(name, {
   create: (context) => ({
     FunctionDeclaration(node) {
       context.report({
-        messageId: "noFunctionDeclaration",
+        messageId,
         node,
       })
     },
   }),
+  name,
   meta: {
     docs: {
       description: "Restricts FunctionDeclaration usage",
     },
     messages: {
-      noFunctionDeclaration: "FunctionDeclaration usage restricted!",
+      [messageId]: "FunctionDeclaration usage restricted!",
     },
+    type: "problem",
     schema: [],
   },
-} satisfies CustomRule
+  defaultOptions: [],
+})
 
-export const noFunctionDeclaration = {
-  name: "no-function-declaration",
-  rule,
+if (import.meta.vitest) {
+  test(noFunctionDeclaration, {
+    valid: [],
+    invalid: [
+      {
+        code: `
+          function test() {}
+        `,
+        errors: [{ messageId }],
+      },
+    ],
+  })
 }

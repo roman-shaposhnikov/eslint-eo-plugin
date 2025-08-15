@@ -1,24 +1,59 @@
-const rule = {
+import { test } from "./test"
+import { createNamedRule } from "./createRule"
+
+const name = "no-function-expression"
+const messageId = "noFunctionExpression"
+export const noFunctionExpression = createNamedRule(name, {
   create: (context) => ({
     FunctionExpression(node) {
       context.report({
-        messageId: "noFunctionExpression",
+        messageId,
         node,
       })
     },
   }),
+  name,
   meta: {
     docs: {
       description: "Restricts FunctionExpression usage",
     },
     messages: {
-      noFunctionExpression: "FunctionExpression usage restricted!",
+      [messageId]: "FunctionExpression usage restricted!",
     },
+    type: "problem",
     schema: [],
   },
-} satisfies CustomRule
+  defaultOptions: [],
+})
 
-export const noFunctionExpression = {
-  name: "no-function-expression",
-  rule,
+if (import.meta.vitest) {
+  test(noFunctionExpression, {
+    valid: [],
+    invalid: [
+      {
+        code: `
+          const test = function nfe() {}
+        `,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          const test = function () {}
+        `,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          (function nfe() {})()
+        `,
+        errors: [{ messageId }],
+      },
+      {
+        code: `
+          (function () {})()
+        `,
+        errors: [{ messageId }],
+      },
+    ],
+  })
 }
