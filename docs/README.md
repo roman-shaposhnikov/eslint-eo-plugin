@@ -8,7 +8,7 @@ Plugin rules:
 - [x] noNull
 - [x] noStaticMethods
 - [x] noVar
-- [ ] onlyPrivateFields
+- [x] onlyPrivateFields
 
 - [ ] onlyPublicMethods
 - [ ] noClassWithoutInterface
