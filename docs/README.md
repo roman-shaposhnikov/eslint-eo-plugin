@@ -9,12 +9,12 @@ Plugin rules:
 - [x] noNull
 - [x] noStaticMethods
 - [x] noVar
+- [x] onlyFourPublicMethods
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
 - [ ] noNewOutsideCtor
 - [ ] noConstOutsideClass
-- [ ] onlyFourPublicMethods
 - [ ] onlyFourEncapsulatedDependencies
 - [ ] onlyFourParamsInMethod
 

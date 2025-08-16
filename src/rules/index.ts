@@ -6,6 +6,7 @@ import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noFunctionExpression } from "./noFunctionExpression"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
+import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
 import { noImplementationInheritance } from "./noImplementationInheritance"
 
 export const enabledRules = [
@@ -17,6 +18,7 @@ export const enabledRules = [
   onlyPublicMethods,
   noFunctionExpression,
   noFunctionDeclaration,
+  onlyFourPublicMethods,
   noImplementationInheritance,
 ]
 
