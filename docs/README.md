@@ -9,8 +9,8 @@ Plugin rules:
 - [x] noStaticMethods
 - [x] noVar
 - [x] onlyPrivateFields
+- [x] onlyPublicMethods
 
-- [ ] onlyPublicMethods
 - [ ] noClassWithoutInterface
 - [ ] noMutableClasses
 - [ ] noPropertyAccessors
