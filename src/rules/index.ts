@@ -7,6 +7,7 @@ import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noFunctionExpression } from "./noFunctionExpression"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
 import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
+import { onlyFourParamsInMethod } from "./onlyFourParamsInMethod"
 import { noImplementationInheritance } from "./noImplementationInheritance"
 
 export const enabledRules = [
@@ -19,6 +20,7 @@ export const enabledRules = [
   noFunctionExpression,
   noFunctionDeclaration,
   onlyFourPublicMethods,
+  onlyFourParamsInMethod,
   noImplementationInheritance,
 ]
 
