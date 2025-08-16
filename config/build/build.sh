@@ -48,7 +48,7 @@ function buildTypes {
 
 function buildCopy {
   cp package.json dist/package.json
-  cp README.md dist/README.md
+  cp docs/README.md dist/README.md
 }
 
 function copyDtsFiles {
