@@ -4,6 +4,7 @@ import { noNull } from "./noNull"
 import { noStaticMethods } from "./noStaticMethods"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
+import { noPropertyAccessors } from "./noPropertyAccessors"
 import { noFunctionExpression } from "./noFunctionExpression"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
 import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
@@ -17,6 +18,7 @@ export const enabledRules = [
   noStaticMethods,
   onlyPrivateFields,
   onlyPublicMethods,
+  noPropertyAccessors,
   noFunctionExpression,
   noFunctionDeclaration,
   onlyFourPublicMethods,

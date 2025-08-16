@@ -7,6 +7,7 @@ Plugin rules:
 - [x] noImplementationInheritance
 - [x] noLet
 - [x] noNull
+- [x] noPropertyAccessors
 - [x] noStaticMethods
 - [x] noVar
 - [x] onlyFourParamsInMethod
@@ -23,7 +24,6 @@ Plugin rules:
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noMutableClasses
-- [ ] noPropertyAccessors
 - [ ] noTypeIntrospection
 - [ ] noTypeCasting
 
