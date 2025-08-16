@@ -4,8 +4,13 @@ function build {
   SECONDS=0
   buildClear
   echo "dist directory cleared"
-  buildCjs
-  echo "cjs build completed"
+  # @todo fix commonjs build
+  # Vitest in-source testing broke commonjs build
+  # possible solution is moving tests in separate file
+  # but in this way we are loosing typescript checks
+  # inside of test-cases
+  # buildCjs
+  # echo "cjs build completed"
   buildEsm
   echo "esm build completed"
   buildTypes
