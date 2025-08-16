@@ -29,7 +29,8 @@ type TestCases<MessageIds extends string> = RunTests<MessageIds, []>
 
 export const test = <Name extends string, MessageIds extends string>(
   { name, rule }: NamedRule<Name, MessageIds>,
-  testCases: TestCases<MessageIds>
+  { valid = [], invalid = [] }: Partial<TestCases<MessageIds>>
 ) => {
+  const testCases = { valid, invalid }
   ruleTester.run(name, rule, testCases)
 }
