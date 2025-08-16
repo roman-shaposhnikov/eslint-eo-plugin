@@ -1,31 +1,20 @@
 import { test } from "./test"
-import { createNamedRule } from "./createRule"
+import { rule } from "./createRule"
 
-const name = "no-var"
 const messageId = "noVar"
-export const noVar = createNamedRule(name, {
+export const noVar = rule({
+  name: "no-var",
+  description: "Restricts Var usage",
+  messages: {
+    [messageId]: "Var usage restricted, use const instead!",
+  },
   create: (context) => ({
     VariableDeclaration(node) {
       if (node.kind === "var") {
-        context.report({
-          messageId,
-          node,
-        })
+        context.report({ messageId, node })
       }
     },
   }),
-  name,
-  meta: {
-    docs: {
-      description: "Restricts Var usage",
-    },
-    messages: {
-      [messageId]: "Var usage restricted, use const instead!",
-    },
-    type: "problem",
-    schema: [],
-  },
-  defaultOptions: [],
 })
 
 if (import.meta.vitest) {

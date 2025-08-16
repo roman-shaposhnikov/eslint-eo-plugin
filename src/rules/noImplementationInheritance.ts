@@ -1,9 +1,14 @@
 import { test } from "./test"
-import { createNamedRule } from "./createRule"
+import { rule } from "./createRule"
 
-const name = "no-implementation-inheritance"
 const messageId = "noImplementationInheritance"
-export const noImplementationInheritance = createNamedRule(name, {
+export const noImplementationInheritance = rule({
+  name: "no-implementation-inheritance",
+  description: "Restricts implementation inheritance",
+  messages: {
+    [messageId]:
+      "Implementation inheritance restricted, use composition instead!",
+  },
   create: (context) => ({
     ClassDeclaration(node) {
       if (node.superClass) {
@@ -11,19 +16,6 @@ export const noImplementationInheritance = createNamedRule(name, {
       }
     },
   }),
-  name,
-  meta: {
-    docs: {
-      description: "Restricts implementation inheritance",
-    },
-    messages: {
-      [messageId]:
-        "Implementation inheritance restricted, use composition instead!",
-    },
-    type: "problem",
-    schema: [],
-  },
-  defaultOptions: [],
 })
 
 if (import.meta.vitest) {

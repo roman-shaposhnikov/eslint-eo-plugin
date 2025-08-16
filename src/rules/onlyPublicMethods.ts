@@ -1,10 +1,14 @@
 import { test } from "./test"
-import { createNamedRule } from "./createRule"
+import { rule } from "./createRule"
 
-const name = "only-public-methods"
 const messageId = "onlyPublicMethods"
-export const onlyPublicMethods = createNamedRule(name, {
-  create: (context) => ({
+export const onlyPublicMethods = rule({
+  name: "only-public-methods",
+  description: "Allows only public methods usage",
+  messages: {
+    [messageId]: "Only public methods usage allowed!",
+  },
+create: (context) => ({
     MethodDefinition(node) {
       const tsPublicModifier = node.accessibility === undefined
       const jsPublicMethod = node.key.type === "Identifier"
@@ -14,18 +18,6 @@ export const onlyPublicMethods = createNamedRule(name, {
       }
     },
   }),
-  name,
-  meta: {
-    docs: {
-      description: "Allows only public methods usage",
-    },
-    messages: {
-      [messageId]: "Only public methods usage allowed!",
-    },
-    type: "problem",
-    schema: [],
-  },
-  defaultOptions: [],
 })
 
 if (import.meta.vitest) {

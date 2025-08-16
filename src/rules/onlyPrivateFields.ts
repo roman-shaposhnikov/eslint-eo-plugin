@@ -1,9 +1,13 @@
 import { test } from "./test"
-import { createNamedRule } from "./createRule"
+import { rule } from "./createRule"
 
-const name = "only-private-fields"
 const messageId = "onlyPrivateFields"
-export const onlyPrivateFields = createNamedRule(name, {
+export const onlyPrivateFields = rule({
+  name: "only-private-fields",
+  description: "Allows only private fields usage",
+  messages: {
+    [messageId]: "Only private fields usage allowed!",
+  },
   create: (context) => ({
     PropertyDefinition(node) {
       const tsPrivateModifier = node.accessibility === "private"
@@ -14,18 +18,6 @@ export const onlyPrivateFields = createNamedRule(name, {
       }
     },
   }),
-  name,
-  meta: {
-    docs: {
-      description: "Allows only private fields usage",
-    },
-    messages: {
-      [messageId]: "Only private fields usage allowed!",
-    },
-    type: "problem",
-    schema: [],
-  },
-  defaultOptions: [],
 })
 
 if (import.meta.vitest) {

@@ -1,31 +1,20 @@
 import { test } from "./test"
-import { createNamedRule } from "./createRule"
+import { rule } from "./createRule"
 
-const name = "no-null"
 const messageId = "noNull"
-export const noNull = createNamedRule(name, {
+export const noNull = rule({
+  name: "no-null",
+  description: "Restricts null usage",
+  messages: {
+    [messageId]: "Null usage restricted!",
+  },
   create: (context) => ({
     Literal(node) {
       if (node.value === null) {
-        context.report({
-          messageId,
-          node,
-        })
+        context.report({ messageId, node })
       }
     },
   }),
-  name,
-  meta: {
-    docs: {
-      description: "Restricts null usage",
-    },
-    messages: {
-      [messageId]: "Null usage restricted!",
-    },
-    type: "problem",
-    schema: [],
-  },
-  defaultOptions: [],
 })
 
 if (import.meta.vitest) {
