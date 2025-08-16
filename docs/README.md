@@ -11,22 +11,22 @@ Plugin rules:
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
+- [ ] noImplementationInheritance
+- [ ] noNewOutsideCtor
+- [ ] noConstOutsideClass
+- [ ] onlyFourPublicMethods
+- [ ] onlyFourEncapsulatedDependencies
+- [ ] onlyFourParamsInMethod
+
 - [ ] noClassWithoutInterface
+- [ ] onlyTenStatementsEachMethod
+
 - [ ] noMutableClasses
 - [ ] noPropertyAccessors
-- [ ] noNewOutsideCtor
 - [ ] noTypeIntrospection
 - [ ] noTypeCasting
-- [ ] noImplementationInheritance
-- [ ] noPropertyAccessors
 
 - [ ] noCodeInConstructors ?
-- [ ] noConstOutsideClass ?
 - [ ] noAssigningArrowToVariable ?
 - [ ] noStaticBlocks ?
 - [ ] onlyPrivateStaticFields ??
-
-- [ ] onlyForPublicMethods
-- [ ] onlyForEncapsulatedDependencies
-- [ ] onlyForParamsInMethod
-- [ ] onlyTenStatementsEachMethod
