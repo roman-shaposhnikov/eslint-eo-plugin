@@ -28,7 +28,6 @@ export const noFunctionDeclaration = createNamedRule(name, {
 
 if (import.meta.vitest) {
   test(noFunctionDeclaration, {
-    valid: [],
     invalid: [
       {
         code: `

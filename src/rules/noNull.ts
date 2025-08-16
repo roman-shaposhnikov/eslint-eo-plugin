@@ -30,7 +30,6 @@ export const noNull = createNamedRule(name, {
 
 if (import.meta.vitest) {
   test(noNull, {
-    valid: [],
     invalid: [
       {
         code: "const invalidVariable = null",

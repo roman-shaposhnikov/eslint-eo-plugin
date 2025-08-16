@@ -30,7 +30,6 @@ export const noStaticMethods = createNamedRule(name, {
 
 if (import.meta.vitest) {
   test(noStaticMethods, {
-    valid: [],
     invalid: [
       {
         code: `

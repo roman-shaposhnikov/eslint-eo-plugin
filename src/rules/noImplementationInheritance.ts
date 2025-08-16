@@ -28,7 +28,6 @@ export const noImplementationInheritance = createNamedRule(name, {
 
 if (import.meta.vitest) {
   test(noImplementationInheritance, {
-    valid: [],
     invalid: [
       {
         code: `
