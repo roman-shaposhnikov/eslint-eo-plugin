@@ -17,6 +17,7 @@ Plugin rules:
 - [ ] noNewOutsideCtor
 - [ ] noConstOutsideClass
 - [ ] onlyFourEncapsulatedDependencies
+- [ ] noBooleanAsParam
 
 - [ ] noClassWithoutInterface
 - [ ] onlyTenStatementsEachMethod
