@@ -4,6 +4,7 @@ Plugin rules:
 
 - [x] noFunctionDeclaration
 - [x] noFunctionExpression
+- [x] noImplementationInheritance
 - [x] noLet
 - [x] noNull
 - [x] noStaticMethods
@@ -11,7 +12,6 @@ Plugin rules:
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
-- [ ] noImplementationInheritance
 - [ ] noNewOutsideCtor
 - [ ] noConstOutsideClass
 - [ ] onlyFourPublicMethods

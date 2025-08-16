@@ -6,6 +6,7 @@ import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noFunctionExpression } from "./noFunctionExpression"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
+import { noImplementationInheritance } from "./noImplementationInheritance"
 
 export const enabledRules = [
   noLet,
@@ -16,6 +17,7 @@ export const enabledRules = [
   onlyPublicMethods,
   noFunctionExpression,
   noFunctionDeclaration,
+  noImplementationInheritance,
 ]
 
 type ConcreteNamedRule = (typeof enabledRules)[number]
