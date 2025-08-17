@@ -16,7 +16,7 @@ Plugin rules:
 - [x] onlyPublicMethods
 
 - [ ] noNewOutsideCtor
-- [ ] noConstOutsideClass
+- [ ] noConstOutsideMethod
 - [ ] onlyFourEncapsulatedDependencies
 - [ ] noBooleanAsParam
 
@@ -31,3 +31,5 @@ Plugin rules:
 - [ ] noAssigningArrowToVariable ?
 - [ ] noStaticBlocks ?
 - [ ] onlyPrivateStaticFields ??
+
+- [ ] noArrowFunctions ??
