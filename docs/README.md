@@ -12,6 +12,7 @@ Plugin rules:
 - [x] noNull
 - [x] noPropertyAccessors
 - [x] noStaticMethods
+- [x] noTypeCasting
 - [x] noTypeIntrospection
 - [x] noVar
 - [x] onlyFourEncapsulatedDependencies
@@ -25,7 +26,6 @@ Plugin rules:
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noMutableClasses
-- [ ] noTypeCasting
 
 - [ ] noCodeInConstructors ?
 - [ ] noAssigningArrowToVariable ?

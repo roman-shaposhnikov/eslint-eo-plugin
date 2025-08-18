@@ -1,6 +1,7 @@
 import { noLet } from "./noLet"
 import { noVar } from "./noVar"
 import { noNull } from "./noNull"
+import { noTypeCasting } from "./noTypeCasting"
 import { noStaticMethods } from "./noStaticMethods"
 import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { onlyPrivateFields } from "./onlyPrivateFields"
@@ -20,6 +21,7 @@ export const enabledRules = [
   noLet,
   noVar,
   noNull,
+  noTypeCasting,
   noStaticMethods,
   noNewOutsideCtor,
   onlyPrivateFields,
