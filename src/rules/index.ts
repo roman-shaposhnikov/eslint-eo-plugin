@@ -11,6 +11,7 @@ import { noConstOutsideMethod } from "./noConstOutsideMethod"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
 import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
 import { onlyFourParamsInMethod } from "./onlyFourParamsInMethod"
+import { noClassWithoutInterface } from "./noClassWithoutInterface"
 import { noImplementationInheritance } from "./noImplementationInheritance"
 import { onlyFourEncapsulatedDependencies } from "./onlyFourEncapsulatedDependencies"
 
@@ -28,6 +29,7 @@ export const enabledRules = [
   noFunctionDeclaration,
   onlyFourPublicMethods,
   onlyFourParamsInMethod,
+  noClassWithoutInterface,
   noImplementationInheritance,
   onlyFourEncapsulatedDependencies,
 ]

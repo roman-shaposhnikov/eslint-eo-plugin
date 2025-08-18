@@ -2,6 +2,7 @@
 
 Plugin rules:
 
+- [x] noClassWithoutInterface
 - [x] noConstOutsideMethod
 - [x] noFunctionDeclaration
 - [x] noFunctionExpression
@@ -20,7 +21,6 @@ Plugin rules:
 
 - [ ] noBooleanAsParam
 
-- [ ] noClassWithoutInterface
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noMutableClasses
