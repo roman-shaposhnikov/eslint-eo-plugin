@@ -15,9 +15,10 @@ export const noConstOutsideMethod = rule({
     return {
       VariableDeclaration(node) {
         const constant = node.kind === "const"
-        const inMethod = new Node(node).hasAncestor(
+        const [method] = new Node(node).ancestor(
           AST_NODE_TYPES.MethodDefinition
         )
+        const inMethod = Boolean(method)
         const shouldReport = constant && !inMethod
         if (shouldReport) {
           context.report({ messageId, node })
