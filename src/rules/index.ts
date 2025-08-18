@@ -6,6 +6,7 @@ import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
 import { noFunctionExpression } from "./noFunctionExpression"
+import { noConstOutsideMethod } from "./noConstOutsideMethod"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
 import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
 import { onlyFourParamsInMethod } from "./onlyFourParamsInMethod"
@@ -20,6 +21,7 @@ export const enabledRules = [
   onlyPublicMethods,
   noPropertyAccessors,
   noFunctionExpression,
+  noConstOutsideMethod,
   noFunctionDeclaration,
   onlyFourPublicMethods,
   onlyFourParamsInMethod,

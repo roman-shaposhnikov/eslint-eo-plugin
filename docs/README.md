@@ -2,6 +2,7 @@
 
 Plugin rules:
 
+- [x] noConstOutsideMethod
 - [x] noFunctionDeclaration
 - [x] noFunctionExpression
 - [x] noImplementationInheritance
@@ -16,7 +17,6 @@ Plugin rules:
 - [x] onlyPublicMethods
 
 - [ ] noNewOutsideCtor
-- [ ] noConstOutsideMethod
 - [ ] onlyFourEncapsulatedDependencies
 - [ ] noBooleanAsParam
 
