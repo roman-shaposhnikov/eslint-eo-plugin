@@ -12,12 +12,12 @@ Plugin rules:
 - [x] noPropertyAccessors
 - [x] noStaticMethods
 - [x] noVar
+- [x] onlyFourEncapsulatedDependencies
 - [x] onlyFourParamsInMethod
 - [x] onlyFourPublicMethods
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
-- [ ] onlyFourEncapsulatedDependencies
 - [ ] noBooleanAsParam
 
 - [ ] noClassWithoutInterface

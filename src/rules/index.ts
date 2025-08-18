@@ -12,6 +12,7 @@ import { noFunctionDeclaration } from "./noFunctionDeclaration"
 import { onlyFourPublicMethods } from "./onlyFourPublicMethods"
 import { onlyFourParamsInMethod } from "./onlyFourParamsInMethod"
 import { noImplementationInheritance } from "./noImplementationInheritance"
+import { onlyFourEncapsulatedDependencies } from "./onlyFourEncapsulatedDependencies"
 
 export const enabledRules = [
   noLet,
@@ -28,6 +29,7 @@ export const enabledRules = [
   onlyFourPublicMethods,
   onlyFourParamsInMethod,
   noImplementationInheritance,
+  onlyFourEncapsulatedDependencies,
 ]
 
 type ConcreteNamedRule = (typeof enabledRules)[number]
