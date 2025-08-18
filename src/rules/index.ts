@@ -2,6 +2,7 @@ import { noLet } from "./noLet"
 import { noVar } from "./noVar"
 import { noNull } from "./noNull"
 import { noTypeCasting } from "./noTypeCasting"
+import { noStaticBlocks } from "./noStaticBlocks"
 import { noStaticMethods } from "./noStaticMethods"
 import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { noArrowFunctions } from "./noArrowFunctions"
@@ -23,6 +24,7 @@ export const enabledRules = [
   noVar,
   noNull,
   noTypeCasting,
+  noStaticBlocks,
   noStaticMethods,
   noNewOutsideCtor,
   noArrowFunctions,

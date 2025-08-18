@@ -12,6 +12,7 @@ Plugin rules:
 - [x] noNewOutsideCtor
 - [x] noNull
 - [x] noPropertyAccessors
+- [x] noStaticBlocks
 - [x] noStaticMethods
 - [x] noTypeCasting
 - [x] noTypeIntrospection
@@ -27,4 +28,3 @@ Plugin rules:
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noCodeInConstructors ?
-- [ ] noStaticBlocks ?
