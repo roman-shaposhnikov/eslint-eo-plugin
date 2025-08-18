@@ -4,6 +4,7 @@ import { noNull } from "./noNull"
 import { noTypeCasting } from "./noTypeCasting"
 import { noStaticMethods } from "./noStaticMethods"
 import { noNewOutsideCtor } from "./noNewOutsideCtor"
+import { noArrowFunctions } from "./noArrowFunctions"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
@@ -24,6 +25,7 @@ export const enabledRules = [
   noTypeCasting,
   noStaticMethods,
   noNewOutsideCtor,
+  noArrowFunctions,
   onlyPrivateFields,
   onlyPublicMethods,
   noPropertyAccessors,

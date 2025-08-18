@@ -2,6 +2,7 @@
 
 Plugin rules:
 
+- [x] noArrowFunctions (noAssigningArrowToVariable as backup soft alternative)
 - [x] noClassWithoutInterface
 - [x] noConstOutsideMethod
 - [x] noFunctionDeclaration
@@ -26,8 +27,5 @@ Plugin rules:
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noCodeInConstructors ?
-- [ ] noAssigningArrowToVariable ?
 - [ ] noStaticBlocks ?
 - [ ] onlyPrivateStaticFields ??
-
-- [ ] noArrowFunctions ??
