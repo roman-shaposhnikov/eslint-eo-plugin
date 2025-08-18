@@ -28,4 +28,3 @@ Plugin rules:
 
 - [ ] noCodeInConstructors ?
 - [ ] noStaticBlocks ?
-- [ ] onlyPrivateStaticFields ??
