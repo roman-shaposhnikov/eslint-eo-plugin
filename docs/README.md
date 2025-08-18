@@ -21,11 +21,9 @@ Plugin rules:
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
-- [ ] noBooleanAsParam
-
-- [ ] onlyTenStatementsEachMethod
-
 - [ ] noMutableClasses
+- [ ] noBooleanAsParam
+- [ ] onlyTenStatementsEachMethod
 
 - [ ] noCodeInConstructors ?
 - [ ] noAssigningArrowToVariable ?
