@@ -6,6 +6,7 @@ import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
+import { noTypeIntrospection } from "./noTypeIntrospection"
 import { noFunctionExpression } from "./noFunctionExpression"
 import { noConstOutsideMethod } from "./noConstOutsideMethod"
 import { noFunctionDeclaration } from "./noFunctionDeclaration"
@@ -24,6 +25,7 @@ export const enabledRules = [
   onlyPrivateFields,
   onlyPublicMethods,
   noPropertyAccessors,
+  noTypeIntrospection,
   noFunctionExpression,
   noConstOutsideMethod,
   noFunctionDeclaration,
