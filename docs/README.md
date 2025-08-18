@@ -7,6 +7,7 @@ Plugin rules:
 - [x] noFunctionExpression
 - [x] noImplementationInheritance
 - [x] noLet
+- [x] noNewOutsideCtor
 - [x] noNull
 - [x] noPropertyAccessors
 - [x] noStaticMethods
@@ -16,7 +17,6 @@ Plugin rules:
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 
-- [ ] noNewOutsideCtor
 - [ ] onlyFourEncapsulatedDependencies
 - [ ] noBooleanAsParam
 

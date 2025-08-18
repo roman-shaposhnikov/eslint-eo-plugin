@@ -2,6 +2,7 @@ import { noLet } from "./noLet"
 import { noVar } from "./noVar"
 import { noNull } from "./noNull"
 import { noStaticMethods } from "./noStaticMethods"
+import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
@@ -17,6 +18,7 @@ export const enabledRules = [
   noVar,
   noNull,
   noStaticMethods,
+  noNewOutsideCtor,
   onlyPrivateFields,
   onlyPublicMethods,
   noPropertyAccessors,
