@@ -23,8 +23,8 @@ Plugin rules:
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
 - [x] noMutableClasses
+- [x] noBooleanAsParam
 
-- [ ] noBooleanAsParam
 - [ ] onlyTenStatementsEachMethod
 
 - [ ] noCodeInConstructors ?

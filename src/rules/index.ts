@@ -7,6 +7,7 @@ import { noStaticMethods } from "./noStaticMethods"
 import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { noArrowFunctions } from "./noArrowFunctions"
 import { noMutableClasses } from "./noMutableClasses"
+import { noBooleanAsParam } from "./noBooleanAsParam"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
@@ -30,6 +31,7 @@ export const enabledRules = [
   noNewOutsideCtor,
   noArrowFunctions,
   noMutableClasses,
+  noBooleanAsParam,
   onlyPrivateFields,
   onlyPublicMethods,
   noPropertyAccessors,
