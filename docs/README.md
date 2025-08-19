@@ -25,6 +25,5 @@ Plugin rules:
 - [x] noMutableClasses
 - [x] noBooleanAsParam
 
-- [ ] onlyTenStatementsEachMethod
-
+- [ ] onlyTenStatementsEachMethod ?
 - [ ] noCodeInConstructors ?
