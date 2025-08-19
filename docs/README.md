@@ -22,8 +22,8 @@ Plugin rules:
 - [x] onlyFourPublicMethods
 - [x] onlyPrivateFields
 - [x] onlyPublicMethods
+- [x] noMutableClasses
 
-- [ ] noMutableClasses
 - [ ] noBooleanAsParam
 - [ ] onlyTenStatementsEachMethod
 

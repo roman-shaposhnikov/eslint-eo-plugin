@@ -6,6 +6,7 @@ import { noStaticBlocks } from "./noStaticBlocks"
 import { noStaticMethods } from "./noStaticMethods"
 import { noNewOutsideCtor } from "./noNewOutsideCtor"
 import { noArrowFunctions } from "./noArrowFunctions"
+import { noMutableClasses } from "./noMutableClasses"
 import { onlyPrivateFields } from "./onlyPrivateFields"
 import { onlyPublicMethods } from "./onlyPublicMethods"
 import { noPropertyAccessors } from "./noPropertyAccessors"
@@ -28,6 +29,7 @@ export const enabledRules = [
   noStaticMethods,
   noNewOutsideCtor,
   noArrowFunctions,
+  noMutableClasses,
   onlyPrivateFields,
   onlyPublicMethods,
   noPropertyAccessors,
