@@ -6,19 +6,19 @@ import type { SuiteFactory } from "vitest"
 type Message = string | Function
 
 class VitestRuleTester extends RuleTester {
-  static describe(message: Message, callback: SuiteFactory) {
+  static override describe(message: Message, callback: SuiteFactory) {
     describe(message, callback)
   }
 
-  static it(message: Message, callback: SuiteFactory) {
+  static override it(message: Message, callback: SuiteFactory) {
     it(message, callback)
   }
 
-  static itOnly(message: Message, callback: SuiteFactory) {
+  static override itOnly(message: Message, callback: SuiteFactory) {
     it.only(message, callback)
   }
 
-  static afterAll(cb: () => void) {
+  static override afterAll(cb: () => void) {
     afterAll(cb)
   }
 }
