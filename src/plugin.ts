@@ -10,7 +10,7 @@ import {
 export const plugin = {
   meta: {
     // TODO: replace name and version to values from package.json
-    name: "eo",
+    name: "eslint-eo-plugin",
     version: "0.0.0",
   },
   rules: pluginRules,
