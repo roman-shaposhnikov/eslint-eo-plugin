@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "onlyPrivateFields"
@@ -21,6 +20,8 @@ export const onlyPrivateFields = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(onlyPrivateFields, {
     valid: [
       `

@@ -1,6 +1,5 @@
 import { AST_NODE_TYPES } from "@typescript-eslint/utils"
 import { rule } from "./createRule"
-import { test } from "./test"
 
 const messageId = "noBooleanAsParam"
 export const noBooleanAsParam = rule({
@@ -28,6 +27,8 @@ export const noBooleanAsParam = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noBooleanAsParam, {
     invalid: [
       {

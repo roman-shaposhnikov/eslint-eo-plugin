@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noFunctionDeclaration"
@@ -16,6 +15,8 @@ export const noFunctionDeclaration = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noFunctionDeclaration, {
     invalid: [
       {

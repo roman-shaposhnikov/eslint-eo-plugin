@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 import { Node } from "../ast"
 import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/utils"
@@ -26,6 +25,8 @@ export const noMutableClasses = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noMutableClasses, {
     valid: [
       `

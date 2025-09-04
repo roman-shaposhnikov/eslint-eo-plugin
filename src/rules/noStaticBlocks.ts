@@ -1,5 +1,4 @@
 import { rule } from "./createRule"
-import { test } from "./test"
 
 const messageId = "noStaticBlocks"
 export const noStaticBlocks = rule({
@@ -16,6 +15,8 @@ export const noStaticBlocks = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noStaticBlocks, {
     invalid: [
       {

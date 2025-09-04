@@ -1,5 +1,4 @@
 import { rule } from "./createRule"
-import { test } from "./test"
 
 const messageId = "noPropertyAccessors"
 export const noPropertyAccessors = rule({
@@ -19,6 +18,8 @@ export const noPropertyAccessors = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noPropertyAccessors, {
     invalid: [
       {

@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "onlyFourPublicMethods"
@@ -23,6 +22,8 @@ export const onlyFourPublicMethods = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(onlyFourPublicMethods, {
     valid: [
       `

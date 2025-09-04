@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 import { AST_NODE_TYPES } from "@typescript-eslint/utils"
 
@@ -23,6 +22,8 @@ export const onlyFourEncapsulatedDependencies = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(onlyFourEncapsulatedDependencies, {
     valid: [
       `

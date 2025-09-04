@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 import { AST_NODE_TYPES } from "@typescript-eslint/utils"
 import { Node } from "../ast"
@@ -29,6 +28,8 @@ export const noConstOutsideMethod = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noConstOutsideMethod, {
     valid: [
       `

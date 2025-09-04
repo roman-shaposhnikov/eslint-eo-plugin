@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noClassWithoutInterface"
@@ -20,6 +19,8 @@ export const noClassWithoutInterface = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noClassWithoutInterface, {
     valid: [
       `

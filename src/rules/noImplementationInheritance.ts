@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noImplementationInheritance"
@@ -19,6 +18,8 @@ export const noImplementationInheritance = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noImplementationInheritance, {
     invalid: [
       {

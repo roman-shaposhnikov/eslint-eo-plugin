@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noLet"
@@ -18,6 +17,8 @@ export const noLet = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noLet, {
     valid: [
       "const validVariable = 12313",

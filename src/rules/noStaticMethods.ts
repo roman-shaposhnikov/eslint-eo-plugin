@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noStaticMethods"
@@ -18,6 +17,8 @@ export const noStaticMethods = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noStaticMethods, {
     invalid: [
       {

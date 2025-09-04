@@ -1,4 +1,3 @@
-import { test } from "./test"
 import { rule } from "./createRule"
 
 const messageId = "noNull"
@@ -18,6 +17,8 @@ export const noNull = rule({
 })
 
 if (import.meta.vitest) {
+  const { test } = await import("./test")
+
   test(noNull, {
     invalid: [
       {
