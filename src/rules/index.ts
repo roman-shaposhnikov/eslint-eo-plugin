@@ -21,11 +21,11 @@ import { noClassWithoutInterface } from "./noClassWithoutInterface"
 import { noImplementationInheritance } from "./noImplementationInheritance"
 import { onlyFourEncapsulatedDependencies } from "./onlyFourEncapsulatedDependencies"
 
-export const enabledRules = [
+export const tsRules = [noTypeCasting, noClassWithoutInterface]
+export const commonRules = [
   noLet,
   noVar,
   noNull,
-  noTypeCasting,
   noStaticBlocks,
   noStaticMethods,
   noNewOutsideCtor,
@@ -41,11 +41,11 @@ export const enabledRules = [
   noFunctionDeclaration,
   onlyFourPublicMethods,
   onlyFourParamsInMethod,
-  noClassWithoutInterface,
   noImplementationInheritance,
   onlyFourEncapsulatedDependencies,
 ]
+export const all = [...tsRules, ...commonRules]
 
-type ConcreteNamedRule = (typeof enabledRules)[number]
+export type ConcreteNamedRule = (typeof all)[number]
 export type ConcreteRule = ConcreteNamedRule["rule"]
 export type ConcreteRuleName = ConcreteNamedRule["name"]

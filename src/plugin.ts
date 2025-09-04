@@ -1,21 +1,39 @@
-import { pluginRules, createConfigRules } from "./rulesCollection"
+import tseslint from "typescript-eslint"
+
+import {
+  pluginRules,
+  tsRules,
+  commonRules,
+  createConfigRules,
+} from "./rulesCollection"
 
 export const plugin = {
   meta: {
     // TODO: replace name and version to values from package.json
-    name: "eslint-eo-plugin",
+    name: "eo",
     version: "0.0.0",
   },
   rules: pluginRules,
   configs: {
-    recommended: {} satisfies CustomConfig,
+    recommended: [] as CustomConfig[],
   },
 } satisfies CustomPlugin
 
-const recommended = {
-  plugins: {
-    [plugin.meta.name]: plugin,
+const recommended = [
+  tseslint.configs.base,
+  {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+    plugins: {
+      [plugin.meta.name]: plugin,
+    },
+    rules: createConfigRules(plugin.meta.name, commonRules),
   },
-  rules: createConfigRules(plugin.meta.name),
-} satisfies CustomConfig
-Object.assign(plugin.configs.recommended, recommended)
+  {
+    files: ["**/*.{ts,mts,cts}"],
+    plugins: {
+      [plugin.meta.name]: plugin,
+    },
+    rules: createConfigRules(plugin.meta.name, tsRules),
+  },
+] satisfies CustomConfig[]
+plugin.configs.recommended = recommended
