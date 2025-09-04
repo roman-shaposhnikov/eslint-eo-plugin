@@ -4,13 +4,8 @@ function build {
   SECONDS=0
   buildClear
   echo "dist directory cleared"
-  # @todo fix commonjs build
-  # Vitest in-source testing broke commonjs build
-  # possible solution is moving tests in separate file
-  # but in this way we are loosing typescript checks
-  # inside of test-cases
-  # buildCjs
-  # echo "cjs build completed"
+  buildCjs
+  echo "cjs build completed"
   buildEsm
   echo "esm build completed"
   buildTypes
@@ -25,13 +20,13 @@ function buildClear {
 }
 
 function buildCjs {
-  tsc -p tsconfig.cjs.json
+  npx jiti ./config/build/build.cjs.ts
   createPackage commonjs _cjs
   npx tsc-alias -v --dir dist/_cjs -p tsconfig.cjs.json
 }
 
 function buildEsm {
-  tsc -p tsconfig.esm.json
+  npx jiti ./config/build/build.esm.ts
   createPackage module _esm
   npx tsc-alias -v --dir dist/_esm -p tsconfig.esm.json
 }

@@ -42,6 +42,7 @@
     "@types/node": "^24.0.1",
     "@typescript-eslint/rule-tester": "^8.39.1",
     "@typescript-eslint/utils": "^8.34.0",
+    "esbuild": "^0.25.9",
     "eslint": "^9.28.0",
     "tsc-alias": "^1.8.10",
     "tsconfig": "github:roman-shaposhnikov/tsconfig",
