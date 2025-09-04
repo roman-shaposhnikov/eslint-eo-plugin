@@ -8,7 +8,7 @@ export const onlyPublicMethods = rule({
   messages: {
     [messageId]: "Only public methods usage allowed!",
   },
-create: (context) => ({
+  create: (context) => ({
     MethodDefinition(node) {
       const tsPublicModifier = node.accessibility === undefined
       const jsPublicMethod = node.key.type === "Identifier"
