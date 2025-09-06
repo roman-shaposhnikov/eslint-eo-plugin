@@ -2,16 +2,29 @@
 
 function build {
   SECONDS=0
+
   buildClear
   echo "dist directory cleared"
+  CLEANING_TIME=$SECONDS
+
   buildCjs
   echo "cjs build completed"
+  CJS_BUILD_TIME=$(($SECONDS-$CLEANING_TIME))
+  echo "Cjs build time: $CJS_BUILD_TIME seconds"
+
   buildEsm
   echo "esm build completed"
+  ESM_BUILD_TIME=$(($SECONDS-$CJS_BUILD_TIME))
+  echo "Esm build time: $ESM_BUILD_TIME seconds"
+
   buildTypes
   echo "types build completed"
+  TYPES_BUILD_TIME=$(($SECONDS-$ESM_BUILD_TIME))
+  echo "Types build time: $TYPES_BUILD_TIME seconds"
+
   buildCopy
   echo "manuals coping completed"
+
   echo "Elapsed time: $SECONDS seconds"
 }
 
