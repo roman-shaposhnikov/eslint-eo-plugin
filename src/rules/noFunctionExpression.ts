@@ -1,3 +1,4 @@
+import { AST_NODE_TYPES } from "@typescript-eslint/utils"
 import { rule } from "./createRule"
 
 const messageId = "noFunctionExpression"
@@ -9,7 +10,9 @@ export const noFunctionExpression = rule({
   },
   create: (context) => ({
     FunctionExpression(node) {
-      context.report({ messageId, node })
+      if (node.parent.type !== AST_NODE_TYPES.MethodDefinition) {
+        context.report({ messageId, node })
+      }
     },
   }),
 })
@@ -18,6 +21,18 @@ if (import.meta.vitest) {
   const { test } = await import("./test")
 
   test(noFunctionExpression, {
+    valid: [
+      `
+      class Test {
+        test() {}
+      }
+      `,
+      `
+      const Test = class {
+        test() {}
+      }
+      `,
+    ],
     invalid: [
       {
         code: `
