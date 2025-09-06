@@ -1,4 +1,7 @@
+import type { TSESTree, TSESLint } from "@typescript-eslint/utils"
+
 import { rule } from "./createRule"
+import { CTOR } from "./annotations"
 
 const messageId = "noStaticMethods"
 export const noStaticMethods = rule({
@@ -9,17 +12,34 @@ export const noStaticMethods = rule({
   },
   create: (context) => ({
     MethodDefinition(node) {
-      if (node.static) {
+      if (node.static && !isCtor(node, context)) {
         context.report({ messageId, node })
       }
     },
   }),
 })
 
+const isCtor = (
+  node: TSESTree.MethodDefinition,
+  context: TSESLint.RuleContext<"noStaticMethods", []>
+) => {
+  const comments = context.sourceCode.getCommentsBefore(node)
+  const lastComment = comments[comments.length - 1]
+  return lastComment && lastComment.value.trim() === CTOR
+}
+
 if (import.meta.vitest) {
   const { test } = await import("./test")
 
   test(noStaticMethods, {
+    valid: [
+      `
+        class Test {
+          /* ${CTOR} */
+          static method() {}
+        }
+      `,
+    ],
     invalid: [
       {
         code: `
